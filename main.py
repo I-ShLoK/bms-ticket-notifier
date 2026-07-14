@@ -22,16 +22,16 @@ import requests
 CONFIG = {
     "url": os.getenv(
         "BMS_URL",
-        "https://in.bookmyshow.com/movies/chennai/dhurandhar-the-revenge/buytickets/ET00478890"
+        "https://in.bookmyshow.com/movies/hyderabad/spiderman-brand-new-day/ET00447840"
     ),
-    "dates": os.getenv("BMS_DATES", ""),          # comma-separated YYYYMMDD, empty = from URL
-    "theatre": os.getenv("BMS_THEATRE", ""),       # substring filter, empty = all
+    "dates": os.getenv("BMS_DATES", "20260730,20260731,20260801,20260802"),          # comma-separated YYYYMMDD, empty = from URL
+    "theatre": os.getenv("BMS_THEATRE", "Allu Cinemas Kokapet Dolby Cinema,Prasads Multiplex HDR by Barco,Prasads Multiplex PCX"),       # substring filter, empty = all
     "time_period": os.getenv("BMS_TIME", ""),      # e.g. "evening,night", empty = all
 }
 
-RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
-RESEND_TO_EMAIL = os.getenv("RESEND_TO_EMAIL", "")
-RESEND_FROM_EMAIL = os.getenv("RESEND_FROM_EMAIL", "aviiciii@resend.dev")
+RESEND_API_KEY = os.getenv("RESEND_API_KEY", "re_FjfPZLvH_MwyAf7kbQiRhzxvWcsnRJ4VR")
+RESEND_TO_EMAIL = os.getenv("RESEND_TO_EMAIL", "shlokdiddi7@gmail.com")
+RESEND_FROM_EMAIL = os.getenv("RESEND_FROM_EMAIL", "anything@resend.dev")
 
 STATE_FILE = "bms_state.json"
 
