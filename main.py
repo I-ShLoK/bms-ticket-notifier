@@ -562,6 +562,10 @@ def main():
     for dc in date_list:
         data = fetch_bms(event_code, dc, region_code,
                          region_slug_r, lat, lon, geohash)
+        if data:
+            with open(f"response_{dc or 'default'}.json", "w") as f:
+                json.dump(data, f, indent=2)
+        
         if not data:
             print(f"  ⚠️  No data for date {dc or '(default)'}")
             continue
