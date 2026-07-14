@@ -2,9 +2,8 @@ name: BMS Ticket Checker
 
 on:
   schedule:
-    # Every 30 minutes
     - cron: '*/30 * * * *'
-  workflow_dispatch:  # Manual trigger button
+  workflow_dispatch:
 
 jobs:
   check-tickets:
@@ -35,6 +34,13 @@ jobs:
           BMS_THEATRE: ${{ vars.BMS_THEATRE }}
           BMS_TIME: ${{ vars.BMS_TIME }}
         run: uv run main.py
+
+      # 👇 ADD THIS ENTIRE STEP HERE
+      - name: Upload API Responses
+        uses: actions/upload-artifact@v4
+        with:
+          name: bms-api-response
+          path: response_*.json
 
       - name: Commit updated state
         run: |
